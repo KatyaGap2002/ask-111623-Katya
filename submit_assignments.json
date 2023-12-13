@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "164a3c51-987b-4fc6-a479-885913ccbf72",
+		"name": "submit assignments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29257440"
+	},
+	"item": [
+		{
+			"name": "success",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"assignmentId\": 37549,\n  \"answers\": [\n    {\n      \"answer\": \"katya\",\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": 1,\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": [1,2],\n      \"textAnswer\": \"This is my answer\"\n    }\n  ]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submit-assignment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submit-assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unauthorized",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"assignmentId\": 37549,\n  \"answers\": [\n    {\n      \"answer\": \"katya\",\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": 1,\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": [1,2],\n      \"textAnswer\": \"This is my answer\"\n    }\n  ]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submit-assignment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submit-assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "not enough permissions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{teacherToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"assignmentId\": 37549,\n  \"answers\": [\n    {\n      \"answer\": \"katya\",\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": 1,\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": [1,2],\n      \"textAnswer\": \"This is my answer\"\n    }\n  ]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submit-assignment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submit-assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assignment not exist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"assignmentId\": 2,\n  \"answers\": [\n    {\n      \"answer\": \"katya\",\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": 1,\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": [1,2],\n      \"textAnswer\": \"This is my answer\"\n    }\n  ]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submit-assignment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submit-assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assignment already submitted",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"assignmentId\": 37549,\n  \"answers\": [\n    {\n      \"answer\": \"katya\",\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": 1,\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": [1,2],\n      \"textAnswer\": \"This is my answer\"\n    }\n  ]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submit-assignment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submit-assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz dosnt exist???",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"assignmentId\": 37549,\n  \"answers\": [\n    {\n      \"answer\": \"katya\",\n      \"textAnswer\": \"This is my answer\"\n    },\n     {\n      \"answer\": 1,\n      \"textAnswer\": \"This is my answer\"\n    },\n    {\n      \"answer\": ,\n      \"textAnswer\": \"This is my answer\"\n    }\n  ]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submit-assignment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submit-assignment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
